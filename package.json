@@ -1,0 +1,57 @@
+{
+  "name": "object-change",
+  "version": "0.0.9",
+  "description": "Simple utility to be able to attach listeners to events that fired when an object property changes",
+  "main": "index.js",
+  "scripts": {
+    "beautify": "esbeautifier './index.js' './specs/**/*.js'",
+    "beautify-check": "esbeautifier -k './index.js' './specs/**/*.js'",
+    "eslint": "eslinter './index.js' './specs/**/*.js'",
+    "lint": "npm run beautify && npm run eslint",
+    "test": "mocha-runner './specs/**/*.js'",
+    "cover": "istanbul cover -x specs/**/*.js mocha-runner './specs/**/*.js' html text-summary",
+    "watch": "watch-spawn -i -p './specs/**/*.js' istanbul cover -x specs/**/*.js mocha-runner './specs/**/*.js' html text-summary",
+    "check": "npm run beautify-check && npm run eslint",
+    "prepush": "npm run check && npm run test",
+    "changelog": "changelogx -f markdown -o ./changelog.md",
+    "install-hooks": "prepush install && changelogx install-hook"
+  },
+  "prepush": [
+    "npm run prepush"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/royriojas/object-change.git"
+  },
+  "keywords": [
+    "events",
+    "proxy",
+    "object change",
+    "property change",
+    "object value change",
+    "eventDispatcher",
+    "dispatcher"
+  ],
+  "author": "Roy Riojas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royriojas/object-change/issues"
+  },
+  "homepage": "https://github.com/royriojas/object-change",
+  "dependencies": {
+    "dispatchy": "^1.0.2",
+    "extend": "^2.0.1",
+    "lodash.isnull": "^3.0.0",
+    "lodash.isobject": "^3.0.0",
+    "lodash.trim": "^3.0.1"
+  },
+  "devDependencies": {
+    "changelogx": "^1.0.12",
+    "esbeautifier": "^2.0.5",
+    "eslinter": "^1.0.2",
+    "istanbul": "^0.3.14",
+    "mocha-runner": "^1.0.8",
+    "prepush": "^2.0.4",
+    "watch-spawn": "^1.0.3"
+  }
+}
