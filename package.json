@@ -1,6 +1,6 @@
 {
   "name": "object-change",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Simple utility to be able to attach listeners to events that fired when an object property changes",
   "main": "index.js",
   "scripts": {
