@@ -60,7 +60,7 @@ proxyObj.anotherProp = 1// doesn't fire change because is not observed.
   - `off`. To remove the listeners
   The events works similarly to the jQuery `on`/`off`. `fire` is similar to `jQuery.fn.triggerHandler`
 - Be aware that the properties should not be named `on`, `fire` or `off`
-- **Id does not work on nested properties** this is by design, I just wanted to keep it simple.
+- **It does not work on nested properties**. This is by design, I just wanted to keep it simple.
 - The base object is used as the prototype for the returned object. If you change a nested property, **it will affect the original object**
   I did it this way to avoid having to copy all the properties to the new object, but... I might consider change it in the future
   if it is proven to be a problem.
